@@ -1,0 +1,19 @@
+{
+  "name": "turnbasedgame",
+  "version": "1.0.0",
+  "description": "Simple turn based game.",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "jquery": "3.4.1",
+    "react": "16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
