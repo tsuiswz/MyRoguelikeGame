@@ -7,4 +7,4 @@ My other repository, RoguelikeGame, is the original, but it unsynced with codesa
 
 To combat this I've had to create a new repo, namely this one.
 
-![MyRoguelikeGame Example Picture](./MyRoguelikeGame Demo Picture.png)
+![MyRoguelikeGame Example Picture](/MyRoguelikeGame Demo Picture.png)
