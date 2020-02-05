@@ -1,7 +1,7 @@
 {
-  "name": "turnbasedgame",
+  "name": "myroguelikegame",
   "version": "1.0.0",
-  "description": "Simple turn based game.",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",

@@ -1,42 +1,20 @@
-export default class HealEffect {
-  constructor(name, description, effects, cooldown) {
-    this.name = name;
-    this.description = description;
-    this.cooldown = cooldown;
+import Effect from "./effect";
+
+export default class HealEffect extends Effect {
+  constructor(name, power) {
+    super(name);
+    this.power = power;
   }
 
   activateEffect(user, target) {
+    user.receiveHeal(this.power);
   }
 
-  getName() {
-    return this.name;
+  getPower() {
+    return this.power;
   }
 
-  getDescription() {
-    return this.description;
-  }
-
-  getEffects() {
-    return this.effects;
-  }
-
-  getCooldown() {
-    return this.cooldown;
-  }
-
-  setName(name) {
-    this.name = name;
-  }
-
-  setDescription(description) {
-    this.description = description;
-  }
-
-  setEffects(effects) {
-    this.effects = effects;
-  }
-
-  setCooldown(cooldown) {
-    this.cooldown = cooldown;
+  setPower(power) {
+    this.power = power;
   }
 }
