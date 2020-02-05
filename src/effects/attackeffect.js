@@ -1,16 +1,16 @@
 import Effect from "./effect";
 
 export default class AttackEffect extends Effect {
-  constructor(name, attackDamage) {
+  constructor(name, power) {
     super(name);
-    this.attackDamage = attackDamage;
+    this.power = power;
   }
 
   activateEffect(user, target) {
     // prehit stuff
     // calculate hit dmg
     // actual hit
-    target.takeHit(this.attackDamage);
+    target.receiveDamage(this.power);
     // onhit(user)
     // onmiss(user)
     // ondodge(target)
@@ -20,19 +20,11 @@ export default class AttackEffect extends Effect {
     // onEffect
   }
 
-  getName() {
-    return this.name;
+  getPower() {
+    return this.power;
   }
 
-  getAttackDamage() {
-    return this.attackDamage;
-  }
-
-  setName(name) {
-    this.name = name;
-  }
-
-  setAttackDamage(attackDamage) {
-    this.attackDamage = attackDamage;
+  setAttackDamage(power) {
+    this.power = power;
   }
 }

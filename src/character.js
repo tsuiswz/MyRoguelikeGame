@@ -1,22 +1,12 @@
 import BattleHud from "/src/battlehud";
 import Skill from "/src/skill";
 import AttackEffect from "./effects/attackeffect";
+import HealEffect from "./effects/healeffect";
 
 const BATTLE_HUD_WIDTH = 200;
 const BATTLE_HUD_HEIGHT = 50;
 export default class Character {
-  constructor(
-    name,
-    stats,
-    img,
-    size,
-    xpos,
-    ypos,
-    player,
-    opponent,
-    battleSystem,
-    drawing
-  ) {
+  constructor(name, stats, img, size, xpos, ypos, player, opponent, drawing) {
     this.name = name;
     this.stats = stats;
     this.image = img;
@@ -26,13 +16,15 @@ export default class Character {
     };
     this.player = player;
     this.opponent = opponent;
-    this.battleSystem = battleSystem;
     this.drawing = drawing;
     this.skills = [
       new Skill(
         "Skillage Uno",
         "The first skill ever created. God bless.",
-        [new AttackEffect("Attack Effect", 2)],
+        [
+          new AttackEffect("Attack Effect", 2),
+          new HealEffect("Heal Effect", 2)
+        ],
         1,
         this
       )
@@ -53,11 +45,11 @@ export default class Character {
   // pass models to renderingobjects?
 
   update() {
-    this.battleSystem.draw();
+    this.draw();
   }
 
   draw() {
-    this.drawing.drawCharacter(this);
+    this.drawing.drawGame();
   }
 
   addSkill(skill) {
@@ -66,9 +58,15 @@ export default class Character {
     // another check to make sure there is no more than X amount of skills
   }
 
-  takeHit(dmg) {
+  receiveDamage(dmg) {
     // calculate dmg
     this.stats.setCurrHp(Math.max(0, this.stats.getCurrHp() - dmg));
+  }
+
+  receiveHeal(heal) {
+    this.stats.setCurrHp(
+      Math.min(this.stats.getMaxHp(), this.stats.getCurrHp() + heal)
+    );
   }
 
   getOpponent() {

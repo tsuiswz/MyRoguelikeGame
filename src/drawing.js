@@ -1,12 +1,19 @@
 export default class Drawing {
-  constructor(canvas) {
+  constructor(canvas, game) {
     this.canvas = document.getElementById(canvas);
     this.ctx = this.canvas.getContext("2d");
+    this.game = game;
   }
 
-  drawGame(game) {
-    this.ctx.clearRect(0, 0, game.gameWidth, game.gameHeight, this.ctx);
-    this.drawBattleSystem(game.battleSystem);
+  drawGame() {
+    this.ctx.clearRect(
+      0,
+      0,
+      this.game.gameWidth,
+      this.game.gameHeight,
+      this.ctx
+    );
+    this.drawBattleSystem(this.game.battleSystem);
   }
 
   drawBattleSystem(battleSystem) {
