@@ -30,7 +30,6 @@ export default class BattleSystem {
       gameHeight - (LEFT_CHAR_Y_CUSHION + CHAR_SIZE),
       true,
       null,
-      this,
       this.drawing
     );
     this.rightChar = new Character(
@@ -42,7 +41,6 @@ export default class BattleSystem {
       RIGHT_CHAR_Y_CUSHION,
       false,
       null,
-      this,
       this.drawing
     );
     this.leftChar.setOpponent(this.rightChar);
@@ -50,6 +48,6 @@ export default class BattleSystem {
   }
 
   draw() {
-    this.drawing.drawBattleSystem(this);
+    this.drawing.drawGame();
   }
 }

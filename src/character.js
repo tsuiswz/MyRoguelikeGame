@@ -5,18 +5,7 @@ import AttackEffect from "./effects/attackeffect";
 const BATTLE_HUD_WIDTH = 200;
 const BATTLE_HUD_HEIGHT = 50;
 export default class Character {
-  constructor(
-    name,
-    stats,
-    img,
-    size,
-    xpos,
-    ypos,
-    player,
-    opponent,
-    battleSystem,
-    drawing
-  ) {
+  constructor(name, stats, img, size, xpos, ypos, player, opponent, drawing) {
     this.name = name;
     this.stats = stats;
     this.image = img;
@@ -26,7 +15,6 @@ export default class Character {
     };
     this.player = player;
     this.opponent = opponent;
-    this.battleSystem = battleSystem;
     this.drawing = drawing;
     this.skills = [
       new Skill(
@@ -53,11 +41,11 @@ export default class Character {
   // pass models to renderingobjects?
 
   update() {
-    this.battleSystem.draw();
+    this.draw();
   }
 
   draw() {
-    this.drawing.drawCharacter(this);
+    this.drawing.drawGame();
   }
 
   addSkill(skill) {
