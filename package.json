@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "react": "16.12.0"
   },
   "devDependencies": {
